@@ -1,0 +1,49 @@
+<h1>Editing Idea</h1>
+
+  <%= form_with(model: @idea, local: true,url:choose_new_or_edit) do |form| %>
+  <% if @idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+      <ul>
+      <% idea.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :seed_name1 %>
+    <%= form.text_field :seed_name1, id: :idea_seed_name1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seed_name2 %>
+    <%= form.text_field :seed_name2, id: :idea_seed_name2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :idea_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, id: :idea_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@idea.image.url) if @idea.image.url %>
+    <%= form.file_field :image, id: :idea_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @idea %> |
+<%= link_to 'Back', ideas_path %>

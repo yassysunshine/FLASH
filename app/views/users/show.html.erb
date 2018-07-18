@@ -1,0 +1,21 @@
+<h1><%= @user.name %>のページ</h1>
+<br>
+<p>メールアドレス: <%= @user.email %></p>
+<p>TOP画像: <%= image_tag @user.icon %></p>
+  <table>
+    <thead>
+      <tr>
+        <th>お気に入り一覧</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @favorites_ideas.each do |favorite_idea| %>
+        <tr>
+          <td><%= favorite_idea.content %></td>
+          <td><%= link_to ' 削除 ', idea_path, method: :delete, data: { confirm: '削除しますか?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= link_to '投稿一覧', ideas_path %>

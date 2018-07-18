@@ -1,0 +1,27 @@
+<h1 class='page-header'>ユーザー検索結果</h1>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel panel-inverse' data-sortable-id='table-basic-2'>
+      <div class='panel-body'>
+
+        <table class='table table-hover'>
+          <thead>
+          <tr>
+            <th>アイディア名</th>
+            <th>アイディア内容</th>
+            <th style='width: 200px;'></th>
+          </tr>
+          </thead>
+          <tbody>
+            <% @search.each do |idea| %>
+              <tr>
+                <td><%= idea.title %></td>
+                <td><%= idea.content %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<h1>確認画面</h1>
+<%= form_with(model: @idea, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :seed_name1 %>
+  <%= form.hidden_field :seed_name2 %>
+<%= form.submit "投稿する" %>
+<% end %>
+
+<%= form_with(model:@idea, url:new_idea_path, local:true, method:"get") do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :seed_name1 %>
+  <%= form.hidden_field :seed_name2 %>
+  <%= form.submit "戻る", name: "back" %>
+<% end %>

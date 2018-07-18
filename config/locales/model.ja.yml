@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      idea: "アイディア"
+      user: "ユーザー"
+      seed: "シード"
+    attributes:
+      idea:
+        title: "タイトル"
+        content: "内容"
+        image: "画像"
+        seed_name1: "シード名1"
+        seed_name2: "シード名2"
+      user:
+        title: "タイトル"
+        name: "名前"
+        email: "メールアドレス"
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログインを記憶"
