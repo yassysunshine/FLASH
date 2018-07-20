@@ -12,7 +12,8 @@
     <tbody>
       <% @favorites_ideas.each do |favorite_idea| %>
         <tr>
-          <td><%= favorite_idea.content %></td>
+          <td>アイディア名:<%= favorite_idea.title %></td>
+          <td><%= link_to '詳細', idea_path %></td>
           <td><%= link_to ' 削除 ', idea_path, method: :delete, data: { confirm: '削除しますか?' } %></td>
         </tr>
       <% end %>

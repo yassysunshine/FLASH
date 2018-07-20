@@ -1,5 +1,7 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :login_check, only: [:new, :edit, :update, :destroy, :show]
+
 
   # GET /ideas
   # GET /ideas.json
@@ -93,5 +95,12 @@ class IdeasController < ApplicationController
 
     def search_params
       params.require(:q).permit!
+    end
+    
+    def login_check
+      unless current_user.present?
+        flash[:alert] = "ログインしてください"
+        redirect_to root_path
+      end
     end
 end
