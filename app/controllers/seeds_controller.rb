@@ -26,7 +26,6 @@ class SeedsController < ApplicationController
   def create
     @seed = Seed.new(seed_params)
     @seed.user_id = current_user.id
-      require 'pry'; binding.pry
    respond_to do |format|
       if @seed.save
         format.html { redirect_to @seed, notice: 'Seed was successfully created.' }

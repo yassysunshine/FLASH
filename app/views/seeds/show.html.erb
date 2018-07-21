@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>シード名:</strong>
   <%= @seed.title %>
 </p>
 
 <p>
-  <strong>Owner:</strong>
+  <strong>発案者:</strong>
   <%= @seed.owner %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>投稿者:</strong>
   <%= @seed.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_seed_path(@seed) %> |
-<%= link_to 'Back', seeds_path %>
+<%= link_to ' 編集 ', edit_seed_path(@seed) %> |
+<%= link_to ' 戻る ', seeds_path %>
