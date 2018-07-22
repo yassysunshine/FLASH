@@ -1,5 +1,7 @@
 class SeedsController < ApplicationController
   before_action :set_seed, only: [:show, :edit, :update, :destroy]
+  before_action :login_check, only: [:new, :edit, :update, :destroy, :show]
+
 
   # GET /seeds
   # GET /seeds.json
@@ -70,5 +72,12 @@ class SeedsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def seed_params
       params.require(:seed).permit(:title, :owner)
+    end
+
+    def login_check
+      unless current_user.present?
+        flash[:alert] = "ログインしてください"
+        redirect_to root_path
+      end
     end
 end
