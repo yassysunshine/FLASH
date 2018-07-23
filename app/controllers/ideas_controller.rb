@@ -8,7 +8,7 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.page(params[:page]).per(2)
     @search = Idea.ransack(params[:q])
-    @result = @search.result
+    @result = @search.result.page(params[:page]).per(2)
   end
 
   def search
