@@ -18,7 +18,7 @@
         <td><%= seed.title %></td>
         <td><%= seed.owner %></td>
         <td><%= seed.user.name %></td>
-        <% if logged_in? %>
+        <% if current_user == seed.user_id %>
         <td><%= link_to '詳細', seed %></td>
         <td><%= link_to '編集', edit_seed_path(seed) %></td>
         <td><%= link_to '削除', seed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
