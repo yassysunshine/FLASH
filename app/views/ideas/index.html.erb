@@ -34,8 +34,8 @@
         <td><%= idea.title %></td>
         <td><%= idea.content %></td>
         <td><%= image_tag idea.image %></td>
-        <% if logged_in? %>
         <td><%= link_to '詳細', idea %></td>
+        <% if current_user.id == idea.user_id %>
         <td><%= link_to '編集', edit_idea_path(idea) %></td>
         <td><%= link_to '削除', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% else %>
